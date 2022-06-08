@@ -21,7 +21,7 @@
         private int _hitChance;
         private int _block;
         
-        //-----------------<( Name )>---------------------
+        //-----------------<( Name )>------------------------
         public string Name
         {
             get { return _name; }
@@ -38,7 +38,7 @@
         //Alternative shortcut, only if we don't have business rules
         //public int MaxLife {get; set;} 
 
-        //-----------------<( Life )>---------------------
+        //-----------------<( Life )>------------------------
         public int Life
         {
             get { return _life; }
@@ -57,7 +57,7 @@
             }//end set
         }// end life prop
 
-        //-----------------<( Block )>---------------------
+        //--------------------<( Block )>---------------------
         public int Block
         {
             get { return _block; }
@@ -70,7 +70,7 @@
             set { _hitChance = value; }
         }//end HitChance
 
-        //========================<( Collect - Constructors (ctors) )>===========================
+        //================================<( Collect - Constructors (ctors) )>=========================================
 
         //only need 1 fully qualified constructors
 
@@ -85,7 +85,7 @@
 
         public Character() { }
 
-        //========================<( Monkeys Methods)>==========================================
+        //=========================================<( Monkeys Methods)>==================================================
 
         //ToString()
         //CalcBlock() -> return Block
