@@ -8,12 +8,12 @@ namespace Dungeon_Library
 {
     public enum Race
     {
-        Orc,       //[0]
-        Human,     //[1]
-        Elf,       //[2]
-        Dwarf,     //[3]
-        Gnome,     //[4]
-        Tiefling,  //[5]
+        Mandalorian,       //[0] 
+        Human,             //[1]    
+        Wookie,            //[2]  
+        Zabrak,            //[3]
+        Droid,             //[4]
+        
 
     }
 }
