@@ -9,7 +9,7 @@ namespace Dungeon_Library
 {
     public class Weapon 
     {
-        //=========================================<( Funny - Fields )>============================================
+        //==================================<( Funny - Fields )>==================================
 
         private string _name;
         private int _minDamage;
@@ -20,7 +20,7 @@ namespace Dungeon_Library
 
 
 
-        //===========================================<( Properties )>===============================================
+        //======================================<( Properties )>=================================
         
 
         //-----------------------( Name )-------------------------
@@ -75,7 +75,7 @@ namespace Dungeon_Library
 
 
 
-        //===========================================<( Constructor )>==================================================
+        //==============================<( Constructor )>====================================
 
         //------------<( Fully Qualified Ctor)>----------
         public Weapon(string name, int maxDamage, int minDamage, int bonusHitChance, bool isTwoHanded, WeaponType type)
@@ -85,17 +85,17 @@ namespace Dungeon_Library
             MaxDamage = maxDamage;
             BonusHitChance = bonusHitChance;
             IsTwoHanded = isTwoHanded;
-            Type = Type;
+            Type = type;
             
         }
 
-        public Weapon () { }
+        //public Weapon () { }
 
         //========================<( Methods )>==========================================
 
         public override string ToString()
         {
-            //return base.ToString();
+            //return base.ToString();  *add \t late*
             return $"Name {Name}\n" +
                    $"Type {Type}\n" +
                    $"Two-Handed {IsTwoHanded}\n" +

@@ -10,9 +10,12 @@ namespace Dungeon_Library
     public enum WeaponType
     {
         Sword,
+        Magical,
         Knife,
-        HandToHand,
+        Melee,
         Ranged,
+        Spear,
+
         
 
 
