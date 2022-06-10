@@ -28,6 +28,9 @@ namespace Dungeon_Library
         Monster m3 = new Monster("Bandit", 100, 60, 999, 999, 1, 2, "* Doesnt look like he washed his hands.. *");
         Monster m4 = new Monster("Hollow", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
 
+        
+        
+
         //========================================<( CONSTRUCTOR )>==========================================================
         //FQ Ctor -> pass the name, hitChance, block, maxLife, life back to the base()
 
@@ -87,9 +90,9 @@ namespace Dungeon_Library
 
         //}//end GetRoom()
 
-        
 
-        Monster[] monsters = {  };
+
+        
 
         private string GetMonster() //Methods cannot be on the Main()
         {
@@ -97,7 +100,10 @@ namespace Dungeon_Library
             Monster[] monsters = new Monster[]
             {
 
-                Random rand = Console.WriteLine(monsters.Length),
+                m1,
+                m2,
+                m3,
+                m4
 
 
             };   
@@ -110,7 +116,35 @@ namespace Dungeon_Library
             Monster monster = monsters[randomNbr];
 
             return monster;
+
         }//end GetRoom()
+
+        public Dragonling()
+        {
+            Name = "Dragonling";
+            HitChance = 25;
+            Block = 20;
+            MaxLife = 6;
+            Life = 6;
+            MinDamage = 1;
+            MaxDamage = 3;
+            Description = "A freshly-hatched baby dragon. It is still dangerous....";
+            IsScaly = false;
+
+           
+        }
+
+        public override int CalcBlock()
+        {
+            int calculatedBlock = Block;
+
+            if (IsScaly)
+            {
+                calculatedBlock += calculatedBlock / 2;
+            }
+
+            return calculatedBlock;
+        }
 
 
     }//end class

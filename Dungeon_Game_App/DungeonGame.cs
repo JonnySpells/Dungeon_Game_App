@@ -38,11 +38,9 @@ namespace Dungeon_Game_App
             Monster bees = new Monster("Swarm of Bees", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
             Monster bandit = new Monster("Bandit", 100, 60, 999, 999, 1, 2, "* Doesnt look like he washed his hands.. *");
             Monster hollow = new Monster("Hollow", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
-            Monster wolf = new Monster("Wolf", 100, 60, 999, 999, 1, 2, "* What Big Teeth you have *");
-            Monster dragon = new Monster("Dragon", 100, 60, 999, 999, 1, 2, "* Ferocious and firebreathing *");
-            Monster lobster = new Monster("Lobster", 100, 60, 999, 999, 1, 2, "* Looks Delicious *");
+           
 
-            Monster[] monsters = { goblin, bees, bandit, hollow, wolf, dragon, lobster, bees, bees, bees, bees, bees, bees };
+            Monster[] monsters = { goblin, bees, bandit, hollow, bees, bees, bees, bees, bees, bees };
 
 
 
