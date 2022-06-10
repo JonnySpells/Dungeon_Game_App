@@ -8,11 +8,11 @@ namespace Dungeon_Library
 {
     public enum Race
     {
-        Mandalorian,       //[0] 
-        Human,             //[1]    
-        Wookie,            //[2]  
-        Zabrak,            //[3]
-        Droid,             //[4]
+        Soldier,       //[0] 
+        Scout,       //[1]    
+        Scoundrel,       //[2]  
+       
+                    
         
 
     }
