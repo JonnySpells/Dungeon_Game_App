@@ -1,6 +1,7 @@
 ﻿namespace Dungeon_Library
 {
-    public class Character
+    //ABSTRACT means it can only be inherited from; you cannot create one.
+    public abstract class Character 
     {
         //========================<( Funny - Fields )>==========================================
 
@@ -74,7 +75,8 @@
 
         //only need 1 fully qualified constructors
 
-        public Character(string name, int life, int maxLife, int block, int hitChance)
+        public Character(string name, int hitChance, int block, int maxLife, int life)
+
         {
             Name = name;
             Life = life;
@@ -88,10 +90,7 @@
         //=========================================<( Monkeys Methods)>==================================================
 
         //ToString()
-        //CalcBlock() -> return Block
-        //CalcHitChance() -> return HitCHance
-        //CalcDamage() -> Return 0; (for now)
-
+        
         public override string ToString()
         {
             //return base.ToString();
