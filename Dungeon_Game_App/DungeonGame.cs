@@ -11,100 +11,157 @@ namespace Dungeon_Game_App
     {
         static void Main(string[] args)
         {
+            bool name = true;
             bool exit = true;
             bool exitChar = true;
             bool exitFight = true;
+
+            string merc;
+            string userName;
+            Player player;
+                
+            
 
             // Character hero = new Character("Chad Bradly", 50, 50, 9, 2, Race.Human, WeaponType.Melee);
             //Weapon weapon = new Weapon("Number 2 Pencil", 1, 2, 100, false, WeaponType.Melee); //add weapon type
 
             //TODO create room
             //int player;
-            string player;
+            //Player player = new
             int score = 0;
 
-            Weapon w1 = new Weapon("Falcion", 16, 2, 5, false, WeaponType.Sword);
-            Weapon w2 = new Weapon("Magic Missile", 16, 2, 5, false, WeaponType.Magical);
-            Weapon w3 = new Weapon("Dagger", 16, 2, 5, false, WeaponType.Melee);
-            Weapon w4 = new Weapon("Short Bow", 16, 2, 5, false, WeaponType.Ranged);
-            Weapon w5 = new Weapon("Cherry Bomb", 16, 2, 5, false, WeaponType.Explosive);
-            Weapon w6 = new Weapon("Pike", 16, 2, 5, false, WeaponType.Spear);
+            //--------------------------- WEAPON LIST ----------------------------------
+            Weapon w1 = new Weapon("Falcion", 6, 1, 5, false, WeaponType.Sword);
+            Weapon w2 = new Weapon("Magic Missile", 12, 2, 5, true, WeaponType.Magical);
+            Weapon w3 = new Weapon("Dagger", 4, 1, 10, false, WeaponType.Melee);
+            Weapon w4 = new Weapon("Short Bow", 6, 1, 5, true, WeaponType.Ranged);
+            Weapon w5 = new Weapon("Cherry Bomb", 16, 2,2, false, WeaponType.Explosive);
+            Weapon w6 = new Weapon("Pike", 10, 1, 5, true, WeaponType.Spear);
 
+            ////--------------------------- PLAYER OPTIONS ---------------------------------
             Player player1 = new Player("Soldier", 85, 4, 50, 50, Race.Soldier, w1);
             Player player2 = new Player("Scout", 90, 4, 31, 30, Race.Scout, w4);
             Player player3 = new Player("Scoundrel", 95, 4, 30, 30, Race.Scoundrel, w3);
 
-            Monster goblin = new Monster("Goblin", 65, 60, 10, 10, 1, 3, "* Goblins. Nasty Little Things *");
-            Monster bees = new Monster("Swarm of Bees", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
-            Monster bandit = new Monster("Bandit", 100, 60, 999, 999, 1, 2, "* Doesnt look like he washed his hands.. *");
-            Monster hollow = new Monster("Hollow", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
+            //--------------------------- MONSTERS --------------------------------
+            
            
 
-            Monster[] monsters = { goblin, bees, bandit, hollow, bees, bees, bees, bees, bees, bees };
+            
 
 
 
             do            
             {
 
+                Monster monster = Monster.GetMonster();
 
                 //TODO Title
                 Console.Clear();
                 Console.Title = "~~~~~~~~~~<( Prepare to be spooked!!)>~~~~~~~~~~";
 
                 //Console.ForegroundColor.ConsoleColor.Green;
-                Console.WriteLine(@"                                                                                
-# ###                              ###                                    
-    /  /###  /                            ###                                   
-   /  /  ###/                #             ##                             #     
-  /  ##   ##                ##             ##                            ##     
- /  ###                     ##             ##                            ##     
-##   ##          /###     ######## /###    ##  ##   ####      /###     ######## 
-##   ##         / ###  / ######## / ###  / ##   ##    ###  / / #### / ########  
-##   ##        /   ###/     ##   /   ###/  ##   ##     ###/ ##  ###/     ##     
-##   ##       ##    ##      ##  ##    ##   ##   ##      ## ####          ##     
-##   ##       ##    ##      ##  ##    ##   ##   ##      ##   ###         ##     
- ##  ##       ##    ##      ##  ##    ##   ##   ##      ##     ###       ##     
-  ## #      / ##    ##      ##  ##    ##   ##   ##      ##       ###     ##     
-   ###     /  ##    /#      ##  ##    /#   ##   ##      ##  /###  ##     ##     
-    ######/    ####/ ##     ##   ####/ ##  ### / ######### / #### /      ##     
-      ###       ###   ##     ##   ###   ##  ##/    #### ###   ###/        ##    
-                                                         ###                    
-                                                  #####   ###                   
-                                                /#######  /#                    
-                                               /      ###/                      ");
+                Console.WriteLine(@"
+ ,--.--------.    ,----.    ,-,--.  ,--.--------.         ,--.--------.  .=-.-.,--.--------.               ,----.  
+/==/,  -   , -\,-.--` , \ ,-.'-  _\/==/,  -   , -\       /==/,  -   , -\/==/_ /==/,  -   , -\  _.-.     ,-.--` , \ 
+\==\.-.  - ,-./==|-  _.-`/==/_ ,_.'\==\.-.  - ,-./       \==\.-.  - ,-./==|, |\==\.-.  - ,-./.-,.'|    |==|-  _.-` 
+ `--`\==\- \  |==|   `.-.\==\  \    `--`\==\- \           `--`\==\- \  |==|  | `--`\==\- \  |==|, |    |==|   `.-. 
+      \==\_ \/==/_ ,    / \==\ -\        \==\_ \               \==\_ \ |==|- |      \==\_ \ |==|- |   /==/_ ,    / 
+      |==|- ||==|    .-'  _\==\ ,\       |==|- |               |==|- | |==| ,|      |==|- | |==|, |   |==|    .-'  
+      |==|, ||==|_  ,`-._/==/\/ _ |      |==|, |               |==|, | |==|- |      |==|, | |==|- `-._|==|_  ,`-._ 
+      /==/ -//==/ ,     /\==\ - , /      /==/ -/               /==/ -/ /==/. /      /==/ -/ /==/ - , ,/==/ ,     / 
+      `--`--``--`-----``  `--`---'       `--`--`               `--`--` `--`-`       `--`--` `--`-----'`--`-----``  ");
                 RoseDiv();
-                //Console.WriteLine("\n~~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~");
+                
+                Console.WriteLine("\n\n\t<PRESS ANY KEY TO START> ");
+                Console.ReadKey(true).Key.ToString().ToLower();
+
+                // ================================ ( Intro ) =====================================
+                Console.Clear();
+                RoseDiv();
+                Console.WriteLine("*Yet Another Mercinary Come to Find Riches*");
+                Console.ReadKey(true).Key.ToString().ToLower();
+
+                Console.Clear();
+                RoseDiv();
+                Console.WriteLine("*You are a mercinary are you not?..*\n[Yes] or [No]");
+                merc = Console.ReadLine().ToLower();
+                Console.Clear();
 
 
 
 
 
-
-
-
-                Console.WriteLine("\n\n                                          <PRESS ANY KEY TO START> ");
-                Console.ReadKey(true).Key.ToString().ToLower();//----------need proper name numb 1 different then 1----------------------- ;
-                    Console.Clear();
-                //TODO boolean counter variable for main loop
 
                 do
                 {
+                    switch (merc)
+                    {
+                        case "y":
+                        case "yes":
+
+                            Console.Clear();
+                            RoseDiv();
+                            Console.WriteLine("\n*Well Does this \"Does this mercinary\" have a name?*");                            
+                            Console.Write("\nEnter your name: \n");
+                            userName = Console.ReadLine();
+                            Console.WriteLine("\n*Steel Your Resolve {0} the mercinary or Fall With the Rest of the Common Rabble*", userName);
+                            name = true;
+                            Console.ReadKey();
+
+                            break;
+
+                        case "n":
+                        case "no":
+
+                            Console.Clear();
+                            RoseDiv();
+                            Console.WriteLine("\n*Excuse Me I Must Be Mistaken Then. What Are You Called Commoner?*");                            
+                            Console.Write("\nEnter your name: \n");
+                            userName = Console.ReadLine(); //---------- ( USERNAME )                             
+                            Console.WriteLine("\n*May Your Gods Are With You {0} the Commoner.*", userName);
+                            name = true;
+                            Console.ReadKey();
+
+                            break;                        
+
+                        default:
+                            Console.Clear();
+                            RoseDiv();
+                            Console.WriteLine("\n*Well Whatever You Are, You Must Have a Name Correct?*");
+                            Console.Write("\nEnter your name: \n");
+                            userName = Console.ReadLine();
+                            Console.WriteLine("\n*May The Wind Be At Your Back {0}*", userName);
+                            name = true;
+                            Console.ReadKey();
+                            break;
+                    }
+
+                } while (!name);
+
+                Console.WriteLine("div");
+
+                //===========================================<( CHARACTER SELECT )>================================
+                do
+                {
+
+
 
                     Console.Clear();
                     RoseDiv();
-                    Console.WriteLine("\n\n     *Please Choose A Class*\n\n" +
-                        "[1]Soldier - Strong\n[2]Scout - Quick\n" +
-                        "[3]Scoundrel - Clever\n\n   *Choose*");
-                    player = Console.ReadLine();
-
-                    switch (player)
+                    Console.WriteLine("\n*As You Step Towards The Enterence Towards the Dungeon You Reflect On Why You Are Here*");
+                    Console.WriteLine("\n\nPlease Select Profession\n\n" +
+                        "[1]Soldier - Strong, and Resilient\n[2]Scout - Moderate, and Efficient\n" +
+                        "[3]Scoundrel - Quick, and Clever\n\n   *Choose*");
+                    string userChoice = Console.ReadLine();
+                    player = player1;
+                    switch (userChoice)
                     {
                         case "1":
                             Console.Clear();
-                            player = "Scout";
+                            player = player1;
                             RoseDiv();
-                            Console.WriteLine("\n\n     *You have chosen the Soldier*");
+                            Console.WriteLine("\n\n*Stand Ready to Meet Those Who Would Do Violence Against You, And Your Brothers*");
                             Console.ReadKey(true);
                             exitChar = true;
 
@@ -112,9 +169,9 @@ namespace Dungeon_Game_App
 
                         case "2":
                             Console.Clear();
-                            player = "Scout";
+                            player = player2;
                             RoseDiv();
-                            Console.WriteLine("\n\n     *You have chosen the Scout*");
+                            Console.WriteLine("\n\n*The Eyes and Ears of Your Legion, Failure Is Not An Option*");
                             Console.ReadKey(true);
                             exitChar = true;
 
@@ -122,9 +179,9 @@ namespace Dungeon_Game_App
 
                         case "3":
                             Console.Clear();
-                            player = "Scoundrel";
+                            player = player3;
                             RoseDiv();
-                            Console.WriteLine("\n\n     *You Have Chosen the Scoundrel*");
+                            Console.WriteLine("\n\n*A Life of Crime is Still Life, Be Wary, Scoundral*");
                             Console.ReadKey(true);
                             exitChar = true;
                             break;   
@@ -132,7 +189,7 @@ namespace Dungeon_Game_App
                         default:
                             Console.Clear();
                             RoseDiv();
-                            Console.WriteLine("\n\n     *Pick a Character Already!*");
+                            Console.WriteLine("\n\n*Dont Be Shy*");
                             Console.ReadKey(true);
                             exitChar = false;
 
@@ -141,26 +198,27 @@ namespace Dungeon_Game_App
 
                 } while (!exitChar);
 
+                Console.Clear();
+                RoseDiv();
+                Console.WriteLine("\nEntering Dungeon Prepare To Be SPOOKED!!!");
+                Console.ReadKey(true);
 
 
-                //Monster[] monsters = GetMonster();
-                
 
-                
+                //===========================================<( ENCOUNTER MENU )>==============================================
 
-                Console.WriteLine(GetMonster());
+
 
                 do
                 {
 
-
-
-
-                    Console.Clear();
-                    RoseDiv();
                     //GetMonster();
-                    Console.WriteLine(GetRoom());
-                    Console.ReadKey(true);
+                    Console.Clear();
+                    monster = Monster.GetMonster();
+                    //create a room
+                    Console.WriteLine(GetRoom() + $"\nIn this room: {monster.Name}");
+                    RoseDiv();                                    
+                    Console.WriteLine("\n\nWhat would you like to do?");
                     Console.WriteLine(
                                 "1) Attack\n" +
                                 "2) Run Away\n" +
@@ -168,65 +226,68 @@ namespace Dungeon_Game_App
                                 "4) Monster Info\n" +
                                 "5) Exit");
 
-                    string fightMenu = Console.ReadKey(true).Key.ToString();
+                    string fightMenu = Console.ReadLine();
 
                     switch (fightMenu)
                     {
                         case "1":
-                        case "NumPad1":
+                            Console.Clear();
                             RoseDiv();                          
-                            Console.WriteLine($"\n *You Attack {monster.Name}!");
+                            Console.WriteLine($"\n*You Attack {monster.Name} with a flurry of blows!\n");
                             if (monster.Life <= 0)
                             {
-
+                                Console.Clear();
+                                RoseDiv();
                                 Console.ForegroundColor = ConsoleColor.Green;
-
                                 Console.WriteLine("\nYou killed {0}!\n", monster.Name);
-
                                 Console.ResetColor();
 
                                 score++;
-
-                                exitFight = true;
-
-
+                                Console.ReadKey();
+                                exitFight = !true;
                             }
 
                             break;
 
                         case "2":
-                        case "NumPad2":
+                            Console.Clear();
                             RoseDiv();
-                            Console.WriteLine("\n *You manage to flee from {0}*");
+                            Console.WriteLine($"\n*{monster.Name}attacks you as you flee!");
+                            Combat.DoAttack(monster, player);
+                            Console.ReadKey(true);
                             exitFight = false;//UPDATE
 
                             break;
 
                         case "3":
-                        case "NumPad3":
+                            Console.Clear();
                             RoseDiv();
-                            Console.WriteLine("\n *You pull out your birth certificate*");
+                            Console.WriteLine("\n*You pull out your birth certificate*");
                             Console.WriteLine(player);
                             Console.WriteLine("Monsters defeated: " + score);
                             Console.ReadKey(true);
-                            exitFight = true;
+                            exitFight = !true;
                             break;
 
                         case "4":
                         case "NumPad4":
+                            Console.Clear();
                             RoseDiv();
-                            Console.WriteLine("\n *You pull up the monsters perminant records. The monster looks nervous*");
+                            Console.WriteLine("\n*You pull up the monsters perminant records. The monster looks nervous*\n\n");
                             //TODO Print monster info
                             Console.WriteLine(monster.Description);
-                            exitFight = true;
+                            Console.ReadKey(true);
+                            exitFight = false;
                             break;
 
                         case "5":
-                        case "NumPad5":
+
+                            Console.Clear();
                             RoseDiv();
-                            Console.WriteLine("\n *Thanks for playing come back soon!*");
+                            Console.WriteLine("\n*Thanks for playing come back soon!*");
                             Console.ReadKey(true);
-                            exit = false;
+                            exitFight = !false;
+                            exit = !false;
 
                             break;
 
@@ -235,18 +296,21 @@ namespace Dungeon_Game_App
                         default:
                             Console.Clear();
                             RoseDiv();
-                            Console.WriteLine(" Your opponent waits patiently for you to choose an option");
-                            exit = false;
+                            Console.WriteLine("\n\tYour opponent waits patiently for you to choose an option");
                             Console.ReadKey(true);
+                            exit = !true;
+
                             break;
                     }
 
                 } while (!exitFight);
 
-
-                RoseDiv();
-
+                Console.WriteLine("You shouldnt see this");
+                
+                //===========================================<( EXITING GAME )>================================
             } while (!exit);
+
+            RoseDiv();
             Console.WriteLine("display score");
 
 
@@ -266,7 +330,7 @@ namespace Dungeon_Game_App
         {
             string[] rooms = new string[] 
             {
-                "You are treaversing the forrest when You encounter a " ,
+                $"You take a step into a quite long halloway. Theres seems to be something at the veryy end of it. " ,
                 "Out of breath from your last encounter you stop to rest by a cascading waterfall. You decide to " ,
                 "You enter a pretty pink powder room and instantly get glitter on you. " ,
                 "You enter a quiet library... silence... nothing but silence....",
@@ -288,18 +352,8 @@ namespace Dungeon_Game_App
 
         }//end GetRoom()
 
-        
-        
 
-       
-        
-
-            
-        
-        
-        
-        
-        
+               
         
         //Monster[] monsters = new GetMonster();
 

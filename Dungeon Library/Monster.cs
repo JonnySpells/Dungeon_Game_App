@@ -8,6 +8,12 @@ namespace Dungeon_Library
 {
     public class Monster : Character
     {
+        //=============================================================<( FIELDS )>========================================================
+
+
+        //none
+
+        //===========================================================<( PROPERTIES )>===================================================
         private int _minDamage;
 
         public int MaxDamage { get; set; }
@@ -23,10 +29,18 @@ namespace Dungeon_Library
             }
         }
 
-        Monster m1 = new Monster("Goblin", 65, 60, 10, 10, 1, 3, "* Goblins. Nasty Little Things *");
-        Monster m2 = new Monster("Swarm of Bees", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
-        Monster m3 = new Monster("Bandit", 100, 60, 999, 999, 1, 2, "* Doesnt look like he washed his hands.. *");
-        Monster m4 = new Monster("Hollow", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
+        
+        public bool IsScaly { get; private set; }
+        public bool IsStinky { get; private set; }
+        public bool IsRotting { get; private set; }
+
+
+        
+
+        //Monster m1 = new Monster("Goblin", 65, 60, 10, 10, 1, 3, "* Goblins. Nasty Little Things *");
+        //Monster m2 = new Monster("Swarm of Bees", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
+        //Monster m3 = new Monster("Bandit", 100, 60, 999, 999, 1, 2, "* Doesnt look like he washed his hands.. *");
+        //Monster m4 = new Monster("Hollow", 100, 60, 999, 999, 1, 2, "* Bzz Bzz Bzzzz *");
 
         
         
@@ -40,11 +54,16 @@ namespace Dungeon_Library
             MaxDamage = maxDamage;
             Description = description;
         }
+
+        public Monster(string name, int hitChance, int block, int maxLife, int life) : base(name, hitChance, block, maxLife, life)
+        {
+        }
+
         //override the ToString()
         public override string ToString()
         {
             return $"{Name}\n" +
-                   $"Life: {Life} of {MaxLife}\n" +
+                   $"Life: {MaxLife} of {Life}\n" +
                    $"Damage: {MinDamage} to {MaxDamage}\n" +
                    $"Description:\n{Description}";
         }
@@ -68,84 +87,108 @@ namespace Dungeon_Library
 
         //created 4 monster subclasses. Reference Canavas instructions for more information.
 
+        //===================================================<( GetMonster()  )>=======================================
+
+
         //Using room description method (GetRoom()) as a guide, create a method called GetMonster() that returns a 
         //Monster object selected randomly from a list of monsters.
         //Call this method in the main program to fight a monster. (TODO Create a monster)
-        //private static string GetMonster() //Methods cannot be on the Main()
-        //{
-        //    string[] monsters = new string[]
-        //    {
 
-
-        //    };
-        //    Random rand = new Random();
-
-        //    int indexNbr = rand.Next(monsters.Length); //index #
-
-        //    string monster = monsters[indexNbr]; //saving value of room
-
-        //    return monster;    //returning the variable described in: string room = rooms[indexNbr];
-
-        //    //return rooms[new Random().Next(rooms.Length)]; //This contains ALL the code from GetRoom() above just more compact. *REFACTORING*
-
-        //}//end GetRoom()
-
-
-
-        
-
-        private string GetMonster() //Methods cannot be on the Main()
+        public static Monster GetMonster() //Methods cannot be on the Main()
         {
+            Monster m1 = new Monster("Goblin", 65, 1, 10, 10, 1, 3, "* Goblins. Nasty Little Things *");
+            Monster m2 = new Monster("Swarm of Bees", 100, 50, 100, 100, 1, 2, "* Bzz Bzz Bzzzz *");
+            Monster m3 = new Monster("Bandit", 75, 60, 1, 15, 2, 5, "* Doesnt look like he washed his hands.. *");
+            Monster m4 = new Monster("Hollow", 60, 0, 10, 10, 1, 5, "* Hollow Men. Do Not Feel Pitty For Them *");
+            Dragon sm1 = new Dragon("Dragon", 95, 5, 50, 50, 3, 15, "*Yes. Swooping is bad..*", true);
+            Dragon sm2 = new Dragon("Dragonling", 95, 5, 50, 50, 3, 15, "*Joey Lost his dragon*", false);
+            Vampire sm3 = new Vampire("Vampire", 85, 2, 35, 20, 3, 10, "*An apex predator of the night*");
+            Regenerator sm4 = new Regenerator("Regenerator", 75, 1, 20, 20, 1, 2, "*This Enemy Is Not Easily Felled*", true);
 
-            Monster[] monsters = new Monster[]
-            {
-
-                m1,
-                m2,
-                m3,
-                m4
 
 
-            };   
+            Monster[] monsters = { m1, m2, m3, m4, sm1, sm2, sm3, sm4};
+            
+            
 
-                                    
             Random rand = new Random();
 
-            int randomNbr = rand.Next(monsters.Length);
+            int indexNbr = rand.Next(monsters.Length); //index #
 
-            Monster monster = monsters[randomNbr];
+            Monster monster = monsters[indexNbr]; //saving value of room
 
-            return monster;
+            return monster;    //returning the variable described in: string monster = monsters[indexNbr];
+        
 
-        }//end GetRoom()
+        }//end GetMonster()
 
-        public Dragonling()
-        {
-            Name = "Dragonling";
-            HitChance = 25;
-            Block = 20;
-            MaxLife = 6;
-            Life = 6;
-            MinDamage = 1;
-            MaxDamage = 3;
-            Description = "A freshly-hatched baby dragon. It is still dangerous....";
-            IsScaly = false;
-
-           
-        }
-
-        public override int CalcBlock()
-        {
-            int calculatedBlock = Block;
-
-            if (IsScaly)
-            {
-                calculatedBlock += calculatedBlock / 2;
-            }
-
-            return calculatedBlock;
-        }
+        //======================================= CaclBlock() =====================================================
 
 
-    }//end class
+
+
+
+        //============================================<( Unique Monsters )>=======================================================
+
+    //    public Dragon() 
+    //    {
+    //        Name = "Dragon";
+    //        HitChance = 25;
+    //        Block = 20;
+    //        MaxLife = 6;
+    //        Life = 6;
+    //        MinDamage = 1;
+    //        MaxDamage = 3;
+    //        Description = "What is it? Dragons?";
+    //        IsScaly = true;
+    //    }
+
+    //    public Dragonling()
+    //    {
+    //        Name = "Dragonling";
+    //        HitChance = 25;
+    //        Block = 20;
+    //        MaxLife = 6;
+    //        Life = 6;
+    //        MinDamage = 1;
+    //        MaxDamage = 3;
+    //        Description = "A freshly-hatched baby dragon. It is still dangerous....";
+    //        IsScaly = false;
+
+
+    //    }
+
+
+
+
+    //    public Zombie()
+    //    {
+    //        Name = "Zamboh";
+    //        HitChance = 25;
+    //        Block = 1;
+    //        MaxLife = 2;
+    //        Life = 2;
+    //        MinDamage = 2;
+    //        MaxDamage = 30;
+    //        Description = "Can't wait to sink it's teeth into you";
+    //        IsRotting = true;
+    //    }
+
+    //    public Dragon()
+    //    {
+    //    Name = "Braff Zachland";
+    //    HitChance = 100;
+    //    Block = 20;
+    //    MaxLife = 900;
+    //    Life = 900;
+    //    MinDamage = 20;
+    //    MaxDamage = 30;
+    //    Description = "No. I dont want a sample.";
+    //    IsStinky = true;
+    //}
+
+
+
+
+}//end class
 }//end namespace
