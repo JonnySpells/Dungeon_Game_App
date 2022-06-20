@@ -97,12 +97,12 @@ namespace Dungeon_Library
         public static Monster GetMonster() //Methods cannot be on the Main()
         {
             Monster m1 = new Monster("Storm Trooper", 65, 1, 10, 10, 1, 3, "* Goblins. Nasty Little Things *");
-            Monster m2 = new Monster(" ", 100, 50, 100, 100, 1, 2, "* An You find plunder in the Empty room*");
+            Monster m2 = new Monster("nothing", 1, 50, 100, 100, 1, 2, "* An You find plunder in the Empty room*");
             Monster m3 = new Monster("Bandit", 75, 60, 1, 15, 2, 5, "* Doesnt look like he washed his hands.. *");
             Monster m4 = new Monster("Hollow", 60, 0, 10, 10, 1, 5, "* Hollow Men. Do Not Feel Pitty For Them *");
-            Dragon sm1 = new Dragon("Dragon", 95, 5, 50, 50, 3, 15, "*Yes. Swooping is bad..*", true);
-            Dragon sm2 = new Dragon("Dragonling", 95, 5, 50, 50, 3, 15, "*Joey Lost his dragon*", false);
-            Vampire sm3 = new Vampire("Shadow Trooper", 85, 2, 35, 20, 3, 10, "*An apex predator of the night*");
+            DarkJedi sm1 = new DarkJedi("Dark Jedi", 95, 5, 50, 50, 3, 15, "*A former Jedi suduced by the dark side. This one may prove challenging...*", true);
+            DarkJedi sm2 = new DarkJedi("Dark Acolyte", 95, 5, 50, 50, 3, 15, "*A mear student of the dark side, but still dangerous. Stay on guard..*", false);
+            ShadowTrooper sm3 = new ShadowTrooper("Shadow Trooper", 85, 2, 35, 20, 3, 10, "*An apex predator of the night*");
             Regenerator sm4 = new Regenerator("Regenerator", 75, 1, 20, 20, 1, 2, "*This Enemy Is Not Easily Felled*", true);
 
 

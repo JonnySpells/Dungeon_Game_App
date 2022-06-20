@@ -18,7 +18,7 @@ namespace Dungeon_Game_App
             bool leaveFight = true;
 
             string jedi;
-            
+
             string userName;
             Player player;
 
@@ -36,7 +36,7 @@ namespace Dungeon_Game_App
             Weapon w2 = new Weapon("Force Push", 10, 5, 5, true, WeaponType.Magical);
             Weapon w3 = new Weapon("Vibro-knife", 2, 1, 10, false, WeaponType.Melee);
             Weapon w4 = new Weapon("Blaster Pistol", 6, 1, 6, true, WeaponType.Ranged);
-            Weapon w5 = new Weapon("Thermal Detonator", 16, 1,10, false, WeaponType.Explosive);
+            Weapon w5 = new Weapon("Thermal Detonator", 16, 1, 10, false, WeaponType.Explosive);
             Weapon w6 = new Weapon("Electro-Pike", 7, 1, 5, true, WeaponType.Spear);
 
             ////--------------------------- PLAYER OPTIONS ---------------------------------
@@ -45,17 +45,17 @@ namespace Dungeon_Game_App
             Player player3 = new Player("Scoundrel", 95, 4, 30, 30, Race.Scoundrel, w3);
 
             //--------------------------- MONSTERS --------------------------------
-            
-           
-
-            
 
 
 
-            do            
+
+
+
+
+            do
             {
 
-             
+
                 Monster monster = Monster.GetMonster();
 
                 //TODO Title
@@ -80,50 +80,50 @@ namespace Dungeon_Game_App
     |__|     |_______||__|  |__| |__|      |_______||_______|   |__| `._____| \______/  |__| \__| 
                                                                                                   ");
                 RoseDiv();
-                
-                Console.WriteLine("\n\n\t\t\t\t\t<PRESS ANY KEY TO START> ");
+
+                Console.WriteLine("\n\n\t\t\t\t\t<PRESS ANY KEY TO START>");
                 Console.ReadKey(true).Key.ToString().ToLower();
 
                 // ================================ ( Intro ) =====================================
                 Console.Clear();
                 RoseDiv();                                                              //MAKE IT A DREAM SEQUENCE???
-                Console.WriteLine("\n\n*You are a former Jedi turned scavenger..*");
+                Console.WriteLine("\n\n\t*You are a former Jedi turned scavenger..*");
                 Console.WriteLine("\n\n\t\t\t\t\t<PRESS ANY KEY TO PROCEED>");
                 Console.ReadKey(true).Key.ToString().ToLower();
 
                 Console.Clear();
                 RoseDiv();                                                              //MAKE IT A DREAM SEQUENCE???
-                Console.WriteLine("\n\n*Whats worse, along with your team, you were caught on a job in the former place you \nonce called home...*");
+                Console.WriteLine("\n\n\t*Whats worse, along with your team, you were caught on a job in the former place you once called home...*");
                 Console.WriteLine("\n\n\t\t\t\t\t<PRESS ANY KEY TO PROCEED>");
                 Console.ReadKey(true).Key.ToString().ToLower();
 
                 Console.Clear();
                 RoseDiv();                                                              //MAKE IT A DREAM SEQUENCE???
-                Console.WriteLine("\n\n*Currently fading in and out of consciousness. The last thing you can remember is\n being ambushed by imperials troopers inside the Temple*");
+                Console.WriteLine("\n\n\t*Currently fading in and out of consciousness. The last thing you can remember is being ambushed by\n\t\t imperials troopers inside the Temple*");
                 Console.WriteLine("\n\n\t\t\t\t\t<PRESS ANY KEY TO PROCEED>");
                 Console.ReadKey(true).Key.ToString().ToLower();
 
                 Console.Clear();
                 RoseDiv();                                                              //MAKE IT A DREAM SEQUENCE???
-                Console.WriteLine("\n\n*You wonder who could have saved you, but as your now able to open your eyes you now \nsee that you are being dragged away from the commotion by a stranger...*");
+                Console.WriteLine("\n\n*You wonder who could have saved you, but as your now able to open your eyes you now see that you\n\t\t are being dragged away from the commotion by a stranger...*");
                 Console.WriteLine("\n\n\t\t\t\t\t<PRESS ANY KEY TO PROCEED>");
                 Console.ReadKey(true).Key.ToString().ToLower();
 
                 Console.Clear();
                 RoseDiv();
-                Console.WriteLine("\n\n*The stanger places you next to a small tattered bonfire in a cold metal alleyway, and \nafter some rest, begins to speak*\n\n\"");
+                Console.WriteLine("\n\n\t*The stanger places you next to a small tattered bonfire in a cold metal alleyway, and \n\t\tafter some rest, begins to speak*\n\n");
                 Console.WriteLine("\n\n\t\t\t\t\t<PRESS ANY KEY TO PROCEED>");
                 Console.ReadKey(true).Key.ToString().ToLower();
 
                 Console.Clear();
                 RoseDiv();
-                Console.WriteLine("\n\n\"Lot of credits to be made salvaging the old Temple if you make it far enough, although\n I thought *no one* would be crazy enough to try. Not unless you were a Jedi of course.\"\n\n\"");
+                Console.WriteLine("\n\n\t\"Lot of credits to be made salvaging the old Temple if you make it far enough, although\n\t\t I thought *no one* would be crazy enough to try. Not unless you were a Jedi of course.\"\n\n");
                 Console.WriteLine("\n\n\t\t\t\t\t<PRESS ANY KEY TO PROCEED>");
                 Console.ReadKey(true).Key.ToString().ToLower();
 
                 Console.Clear();
                 RoseDiv();
-                Console.WriteLine("\"You wouldn't happen to be one of those jedi would you?..\"\n\n\t\t\t\t\t<TYPE [Yes] or [No] TO CONTINUE>");
+                Console.WriteLine("\n\n\t\"You wouldn't happen to be one of those jedi would you?\"\n\n\t\t\t\t\t<TYPE [Yes] or [No] TO CONTINUE>");
                 jedi = Console.ReadLine().ToString().ToLower();
                 Console.Clear();
 
@@ -136,10 +136,10 @@ namespace Dungeon_Game_App
 
                             Console.Clear();
                             RoseDiv();
-                            Console.WriteLine("\n\"No kidding. Well does this \"Jedi\" have a name?\"");                            
-                            Console.Write("\nEnter your name: \n");
+                            Console.WriteLine("\n\t\"No kidding. Well does this \"Jedi\" have a name?\"");
+                            Console.Write("\n\tEnter your name: \n");
                             userName = Console.ReadLine();
-                            Console.WriteLine("\"Steel Your Resolve {0}. Things arent as they used to be...\"", userName);
+                            Console.WriteLine("\n\t\"Steel Your Resolve {0}. Things arent as they used to be...\"", userName);
                             name = true;
                             Console.ReadKey(true).Key.ToString().ToLower();
 
@@ -150,14 +150,14 @@ namespace Dungeon_Game_App
 
                             Console.Clear();
                             RoseDiv();
-                            Console.WriteLine("\n\"Excuse me I must be mistaken then. What do they call you savenger?\"");                            
+                            Console.WriteLine("\n\"Excuse me I must be mistaken then. What do they call you savenger?\"");
                             Console.Write("\nEnter your name: \n");
                             userName = Console.ReadLine(); //---------- ( USERNAME )                             
                             Console.WriteLine("\n*May the odds be with you {0}. You may need it.*", userName);
                             name = true;
                             Console.ReadKey(true).Key.ToString().ToLower();
 
-                            break;                        
+                            break;
 
                         default:
                             Console.Clear();
@@ -218,7 +218,7 @@ namespace Dungeon_Game_App
                             Console.WriteLine("\n\n*A Life of Crime is Still Life, be wary, Scoundrel*");
                             Console.ReadKey(true).Key.ToString().ToLower();
                             exitChar = true;
-                            break;   
+                            break;
 
                         default:
                             Console.Clear();
@@ -252,7 +252,7 @@ namespace Dungeon_Game_App
                     monster = Monster.GetMonster();
                     //create a room
                     Console.WriteLine(GetRoom() + $"\nA {monster.Name} appears. You ready yourself..");
-                    RoseDiv();                                    
+                    RoseDiv();
                     Console.WriteLine("\n\nWhat would you like to do?");
                     Console.WriteLine(
                                 "1] Attack\n" +
@@ -269,7 +269,7 @@ namespace Dungeon_Game_App
                         {
                             case "1":
                                 Console.Clear();
-                                RoseDiv();                          
+                                RoseDiv();
                                 Console.WriteLine($"\n*You Attack {monster.Name} with a flurry of blows!\n");
                                 if (monster.Life <= 0)
                                 {
@@ -355,12 +355,12 @@ namespace Dungeon_Game_App
                 } while (!exitFight);
 
                 Console.WriteLine("You shouldnt see this");
-                
+
                 //===========================================<( EXITING GAME )>================================
             } while (!exit);
 
             RoseDiv();
-            Console.WriteLine($"Fortunes Plundered: {score}");
+            Console.WriteLine($"Score: {score}");
 
 
         }//main
@@ -368,8 +368,8 @@ namespace Dungeon_Game_App
 
 
 
-            //====================================================<( NOTES/ Area for Methods() >==========================================
-           
+        //====================================================<( NOTES/ Area for Methods() >==========================================
+
         private static void RoseDiv()
         {
             //Console.WriteLine("\n~~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~~@~@~\n");
@@ -404,7 +404,7 @@ namespace Dungeon_Game_App
 
         }//end GetRoom()
 
-
+        
                
         
         //Monster[] monsters = new GetMonster();

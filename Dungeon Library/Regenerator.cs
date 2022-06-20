@@ -19,7 +19,7 @@ namespace Dungeon_Library
 
             if (Life >= 15)
             {
-                Life++;
+                Life += 4;
             }
         }
 

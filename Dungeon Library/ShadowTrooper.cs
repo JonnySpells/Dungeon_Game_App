@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Library
 {
-    public class Vampire : Monster
+    public class ShadowTrooper : Monster
     {
         
         public DateTime NightOwl { get; set; }
@@ -15,7 +15,7 @@ namespace Dungeon_Library
 
 
 
-        public Vampire(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description) : base(name, hitChance, block, maxLife, life)
+        public ShadowTrooper(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description) : base(name, hitChance, block, maxLife, life)
         {
 
             NightOwl = DateTime.Now;

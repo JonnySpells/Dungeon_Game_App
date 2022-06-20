@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Library
 {
-    public class Dragon : Monster
+    public class DarkJedi : Monster
     {
-        public bool IsScaly { get; private set; }
+        public bool IsPowerful { get; private set; }
 
 
 
-        public Dragon(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isScaly) : base(
+        public DarkJedi(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isScaly) : base(
             name, hitChance, block, maxLife, life)
         {
-            IsScaly = IsScaly;
+            IsPowerful = IsPowerful;
         }
 
         public override string ToString()
         {
-            return base.ToString() + (IsScaly ? "It's scales are strong" : "It's scales haven't matured yet");
+            return base.ToString() + (IsPowerful ? "*You sense the hatred in this one*" : "*This one was not fully trained*");
         }
 
         public override int CalcBlock()
         {
             int calculatedBlock = Block;
 
-            if (IsScaly)
+            if (IsPowerful)
             {
                 calculatedBlock += calculatedBlock / 2;
             }
