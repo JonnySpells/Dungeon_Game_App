@@ -41,7 +41,7 @@ namespace Dungeon_Game_App
 
             ////--------------------------- PLAYER OPTIONS ---------------------------------
             Player player1 = new Player("Soldier", 85, 4, 50, 50, Race.Soldier, w1);
-            Player player2 = new Player("Scout", 90, 4, 31, 0, Race.Scout, w4);
+            Player player2 = new Player("Scout", 90, 4, 31, 31, Race.Scout, w4);
             Player player3 = new Player("Scoundrel", 95, 4, 30, 30, Race.Scoundrel, w3);
 
             //--------------------------- MONSTERS --------------------------------
@@ -278,8 +278,8 @@ namespace Dungeon_Game_App
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine("\nYou killed {0}!\n", monster.Name);
                                     Console.ResetColor();
-
-                                    score++;
+                                    AddScore();
+                                    //score++;
                                     Console.ReadKey(true).Key.ToString().ToLower();
                                     exitFight = !true;
                                 }
@@ -369,6 +369,15 @@ namespace Dungeon_Game_App
 
 
         //====================================================<( NOTES/ Area for Methods() >==========================================
+
+        private static void AddScore()
+        {
+            //int score = score++; 
+            
+                       
+        }
+
+
 
         private static void RoseDiv()
         {

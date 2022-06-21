@@ -13,11 +13,11 @@ namespace Dungeon_Library
     {
         public bool IsHealy { get; set; }
 
-        public  Regenerator(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isHealy) : base(name, hitChance, block, maxLife, life)
+        public  Regenerator(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isHealy) : base(name, hitChance, block, maxLife, life, minDamage, maxDamage, description)
         {
             IsHealy = isHealy;
 
-            if (Life >= 15)
+            if (Life <= 15)
             {
                 Life += 4;
             }

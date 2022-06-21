@@ -79,9 +79,9 @@
 
         {
             Name = name;
-            Life = life;
             MaxLife = maxLife;
-            _block = block;
+            Life = life;
+            Block = block;
             HitChance = hitChance;
         }//end ctor
 

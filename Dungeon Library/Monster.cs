@@ -30,7 +30,7 @@ namespace Dungeon_Library
         }
 
         
-        public bool IsScaly { get; private set; }
+        public bool IsPowerful { get; private set; }
         public bool IsStinky { get; private set; }
         public bool IsRotting { get; private set; }
 

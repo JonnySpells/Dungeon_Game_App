@@ -8,14 +8,12 @@ namespace Dungeon_Library
 {
     public class DarkJedi : Monster
     {
-        public bool IsPowerful { get; private set; }
+        public bool IsPowerful { get; set; }
 
-
-
-        public DarkJedi(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isScaly) : base(
-            name, hitChance, block, maxLife, life)
+        public DarkJedi(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isPowerful) : base(
+            name, hitChance, block, maxLife, life, minDamage, maxDamage, description)
         {
-            IsPowerful = IsPowerful;
+            IsPowerful = isPowerful;
         }
 
         public override string ToString()
