@@ -25,7 +25,17 @@ namespace Dungeon_Library
             get { return _minDamage; }
             set
             {
-                _minDamage = (value > 0 && value <= MaxDamage) ? value : 1; //assigns min damage
+
+                if (value > 0 && value < MaxDamage)
+                {
+                    _minDamage = (value > 0 && value <= MaxDamage) ? value : 1; //assigns min damage
+
+                }
+                else
+                {
+                    _minDamage = 1;
+                }
+              
             }
         }
 
@@ -55,9 +65,6 @@ namespace Dungeon_Library
             Description = description;
         }
 
-        public Monster(string name, int hitChance, int block, int maxLife, int life) : base(name, hitChance, block, maxLife, life)
-        {
-        }
 
         //override the ToString()
         public override string ToString()
@@ -78,7 +85,7 @@ namespace Dungeon_Library
         public override int CalcDamage()
         {
             Random rand = new Random();
-            int damage = rand.Next(MinDamage, MaxDamage);
+            int damage = rand.Next(MinDamage, MaxDamage + 1);
             return damage;
         }
 
@@ -96,18 +103,16 @@ namespace Dungeon_Library
 
         public static Monster GetMonster() //Methods cannot be on the Main()
         {
-            Monster m1 = new Monster("Storm Trooper", 65, 1, 10, 10, 1, 3, "* Goblins. Nasty Little Things *");
-            Monster m2 = new Monster("nothing", 1, 50, 100, 100, 1, 2, "* An You find plunder in the Empty room*");
-            Monster m3 = new Monster("Bandit", 75, 60, 1, 15, 2, 5, "* Doesnt look like he washed his hands.. *");
-            Monster m4 = new Monster("Hollow", 60, 0, 10, 10, 1, 5, "* Hollow Men. Do Not Feel Pitty For Them *");
-            DarkJedi sm1 = new DarkJedi("Dark Jedi", 95, 5, 50, 50, 3, 15, "*A former Jedi suduced by the dark side. This one may prove challenging...*", true);
-            DarkJedi sm2 = new DarkJedi("Dark Acolyte", 95, 5, 50, 50, 3, 15, "*A mear student of the dark side, but still dangerous. Stay on guard..*", false);
+            Monster m1 = new Monster("Storm Trooper", 65, 1, 20, 20, 1, 3, "* The main infantry of the Galactic Empire. Childs play *");
+            Monster m2 = new Monster("nothing ", 0, 0, 100, 100, 0, 0, "*An empty room. You should probably keep moving*");
+            DarkJedi sm1 = new DarkJedi("Dark Jedi", 95, 5, 50, 50, 3, 15, "*A former Jedi Knight suduced by the dark side. This one may prove challenging...*", true);
+            DarkJedi sm2 = new DarkJedi("Dark Acolyte", 95, 5, 50, 50, 3, 15, "*A mear acolyte of the dark side, but still dangerous. Stay on guard..*", false);
             ShadowTrooper sm3 = new ShadowTrooper("Shadow Trooper", 85, 2, 35, 20, 3, 10, "*An apex predator of the night*");
-            Regenerator sm4 = new Regenerator("Regenerator", 75, 1, 20, 20, 1, 2, "*This Enemy Is Not Easily Felled*", true);
+            Regenerator sm4 = new Regenerator("Sith Assassin", 75, 1, 20, 20, 1, 2, "*This enemy can steal your life*", true);
 
 
 
-            Monster[] monsters = { m1, m2, m3, m4, sm1, sm2, sm3, sm4};
+            Monster[] monsters = { m1, m1, m1, m1, m1, m1, m1, m2, sm1, sm2, sm3, sm4};
             
             
 

@@ -11,7 +11,7 @@ namespace DungeonTests
     {
         public bool IsHealy { get; set; }
 
-        public Regenerator(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isHealy) : base(name, hitChance, block, maxLife, life)
+        public Regenerator(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isHealy) : base(name, hitChance, block, maxLife, life, minDamage, maxDamage, description)
         {
             IsHealy = isHealy;
 
@@ -31,8 +31,8 @@ namespace DungeonTests
 
 
 
-        public DarkJedi(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isScaly) : base(
-            name, hitChance, block, maxLife, life)
+        public DarkJedi(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description, bool isPowerful) : base(
+            name, hitChance, block, maxLife, life, minDamage, maxDamage, description)
         {
             IsPowerful = IsPowerful;
         }

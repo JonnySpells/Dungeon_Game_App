@@ -15,7 +15,7 @@ namespace Dungeon_Library
 
 
 
-        public ShadowTrooper(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description) : base(name, hitChance, block, maxLife, life)
+        public ShadowTrooper(string name, int hitChance, int block, int maxLife, int life, int minDamage, int maxDamage, string description) : base(name, hitChance, block, maxLife, life, minDamage, maxDamage, description)
         {
 
             NightOwl = DateTime.Now;
@@ -31,7 +31,7 @@ namespace Dungeon_Library
 
         public override string ToString()
         {
-            return String.Format("{0}\n{1}", base.ToString(), NightOwl.Hour < 6 || NightOwl.Hour > 18 ? "*It's Hungry Eyes Gleem In the Darkness...*" : "*Strike Now! At It's Hour of Frailty!*");
+            return String.Format("{0}\n{1}", base.ToString(), NightOwl.Hour < 6 || NightOwl.Hour > 18 ? "*Green trooper lenses Gleem In the Darkness...*" : "*Not so tough in broad daylight!*");
         }
 
 
