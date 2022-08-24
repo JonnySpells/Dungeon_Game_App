@@ -95,7 +95,7 @@
         {
             //return base.ToString();
             //the default base .ToString() prints Namespace.ClassName
-            return $"Profession \"{Name}\"\nHP {MaxLife}\\{Life}\n";
+            return $"HP {MaxLife}\\{Life}\n";
 
         }
 

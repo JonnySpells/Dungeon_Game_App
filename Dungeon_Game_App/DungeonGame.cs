@@ -256,8 +256,8 @@ namespace Dungeon_Game_App
 
                     do
                     {
+                         Console.WriteLine(GetRoom() + $"\n\t\tA {monster.Name} appears. You ready yourself..");
 
-                         Console.WriteLine(GetRoom() + $"\nA {monster.Name} appears. You ready yourself..");
 
 
                         do
@@ -299,7 +299,7 @@ namespace Dungeon_Game_App
                                         leaveFight = true;
                                         exitFight = true;
                                         exit = true;
-                                        nextEncounter = !true;
+                                        nextEncounter = true;
                                     }
                                     if (player.Life <= 0)
                                     {
@@ -345,7 +345,7 @@ namespace Dungeon_Game_App
                                     Console.ReadKey(true).Key.ToString().ToLower();
                                     exitFight = false;
                                     leaveFight = true;
-
+                                    nextEncounter = !true;
                                     break;
 
 
